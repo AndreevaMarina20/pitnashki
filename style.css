@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --main: #0ff;
+    --second: #f0f;
+    --accent: #ff0;
+    --win: #0f0;
+    --danger: #f00;
+    --bg: #0a0a0a;
+    --card: #111;
+
+    font-family: 'Courier New', monospace;
+    background: var(--bg);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+body.green {
+    --main: #0f0;
+    --second: #ff0;
+    --accent: #0ff;
+}
+
+body.red {
+    --main: #f30;
+    --second: #f60;
+}
+
+/* ========== ОКНО ВХОДА ========== */
+.login-card {
+    background: var(--card);
+    border: 2px solid var(--main);
+    box-shadow: 0 0 20px var(--main);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 200px;
+    text-align: center;
+}
+
+.login-card h3 {
+    color: var(--main);
+    letter-spacing: 5px;
+}
+
+.login-card input {
+    background: #000;
+    border: 2px solid var(--second);
+    color: var(--second);
+    padding: 10px;
+    font-family: inherit;
+    text-align: center;
+    border-radius: 8px;
+    outline: none;
+}
+
+.login-card input::placeholder {
+    color: var(--second);
+    opacity: 0.4;
+}
+
+.login-card button,
+.info button,
+.diff-btn,
+.tab-btn {
+    background: transparent;
+    border: 2px solid var(--main);
+    color: var(--main);
+    padding: 10px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+
+.login-card button:hover,
+.diff-btn:hover,
+.tab-btn:hover,
+.info button:hover {
+    box-shadow: 0 0 20px var(--main);
+}
+
+.diff-btn.active,
+.tab-btn.active {
+    background: var(--main);
+    color: #000;
+}
+
+.login-card .rating-btn {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.login-card .rating-btn:hover {
+    box-shadow: 0 0 20px var(--accent);
+}
+
+.login-card span {
+    color: var(--win);
+}
+
+.palette-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.palette-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #555;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: 0.2s;
+}
+
+.palette-btn.active {
+    border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+}
+
+.palette-btn:hover {
+    border-color: var(--accent);
+}
+
+/* ========== ИГРА ========== */
+.game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.diff-panel {
+    display: flex;
+    gap: 10px;
+}
+
+.info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.info span {
+    background: var(--card);
+    border: 2px solid var(--second);
+    color: var(--second);
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.info button {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.info button:hover {
+    box-shadow: 0 0 20px var(--danger);
+}
+
+/* ========== ИГРОВОЕ ПОЛЕ ========== */
+.grid {
+    display: inline-grid;
+    gap: 6px;
+    background: var(--card);
+    padding: 8px;
+    border-radius: 12px;
+    border: 3px solid var(--main);
+    box-shadow: 0 0 30px var(--main);
+}
+
+.tile {
+    width: 85px;
+    height: 85px;
+    background: var(--bg);
+    border: 2px solid var(--second);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    color: var(--second);
+    transition: 0.1s;
+}
+
+.tile:hover {
+    background: #1a0a2e;
+}
+
+.tile:active {
+    transform: scale(0.93);
+}
+
+.tile.empty {
+    border-color: var(--main);
+    cursor: default;
+    color: transparent;
+}
+
+/* ========== ПОБЕДА ========== */
+.win-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid var(--win);
+    z-index: 50;
+    text-align: center;
+    box-shadow: 0 0 40px var(--win);
+}
+
+.win-message h2 {
+    color: var(--win);
+    letter-spacing: 6px;
+    margin-bottom: 10px;
+}
+
+.win-message p {
+    color: var(--win);
+    margin: 5px 0;
+}
+
+.win-message button {
+    margin-top: 10px;
+    background: transparent;
+    border: 2px solid var(--win);
+    color: var(--win);
+    padding: 8px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.win-message button:hover {
+    background: var(--win);
+    color: #000;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ========== ОКНО С РЕКОРДАМИ ========== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 100;
+}
+
+.modal-window {
+    background: var(--bg);
+    margin: 8% auto;
+    padding: 25px;
+    width: 380px;
+    border-radius: 20px;
+    border: 3px solid var(--main);
+    position: relative;
+    box-shadow: 0 0 40px var(--main);
+}
+
+.modal-window h2 {
+    color: var(--main);
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--danger);
+}
+
+.close:hover {
+    color: #fff;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+    margin: 15px 0;
+}
+
+#ratingList {
+    padding-left: 25px;
+    color: var(--second);
+}
+
+#ratingList li {
+    font-size: 15px;
+    margin: 6px 0;
+    padding: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}

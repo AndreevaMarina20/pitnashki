@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Пятнашки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cyan">
+
+    <div class="login-card">
+        <h3>ВХОД</h3>
+        <input type="text" id="nameInput" placeholder="Ник">
+        <button id="loginBtn">ВОЙТИ</button>
+        <span id="userNameSpan">Гость</span>
+        <div class="palette-row">
+            <button class="palette-btn active" data-palette="cyan">💠</button>
+            <button class="palette-btn" data-palette="green">🧪</button>
+            <button class="palette-btn" data-palette="red">🔴</button>
+        </div>
+        <button id="ratingBtn">РЕКОРДЫ</button>
+    </div>
+
+    <div class="game-area">
+        <div class="diff-panel">
+            <button class="diff-btn active" data-size="3">3x3</button>
+            <button class="diff-btn" data-size="4">4x4</button>
+            <button class="diff-btn" data-size="5">5x5</button>
+        </div>
+        <div id="gameGrid" class="grid"></div>
+        <div class="info">
+            <span>ХОДЫ: <span id="movesCount">0</span></span>
+            <span>ВРЕМЯ: <span id="timerDisplay">0</span>c</span>
+            <button id="restartBtn">ЗАНОВО</button>
+        </div>
+    </div>
+
+    <div id="winMessage" class="win-message hidden">
+        <h2>ПОБЕДА!</h2>
+        <p>Ходов: <span id="winMoves">0</span> | Время: <span id="winTime">0</span>c</p>
+        <button id="winCloseBtn">OK</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-window">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>РЕКОРДЫ</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="3">3x3</button>
+                <button class="tab-btn" data-tab="4">4x4</button>
+                <button class="tab-btn" data-tab="5">5x5</button>
+            </div>
+            <ol id="ratingList"></ol>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
