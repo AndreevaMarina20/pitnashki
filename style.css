@@ -30,21 +30,33 @@ body.cyan {
     --main: #0ff;
     --second: #f0f;
     --accent: #ff0;
-    background-image: url('bg.jpg');
+    --win: #0ff;
+    --danger: #f00;
+    --bg: #0a0a0a;
+    --card: #111;
+    background-image: url('bg_cyan.gif');
 }
 
 body.green {
     --main: #0f0;
     --second: #ff0;
     --accent: #0ff;
-    background-image: url('bg2.jpg');
+    --win: #0f0;
+    --danger: #f00;
+    --bg: #0a0a0a;
+    --card: #111;
+    background-image: url('bg_green.gif');
 }
 
 body.red {
     --main: #f30;
-    --second: #f60;
+    --second: rgb(151, 0, 83);
     --accent: #ff0;
-    background-image: url('bg3.jpg');
+    --win: #f00;
+    --danger: #f00;
+    --bg: #0a0a0a;
+    --card: #111;
+    background-image: url('bg_red.gif');
 }
 
 /* ========== ОКНО ВХОДА ========== */
