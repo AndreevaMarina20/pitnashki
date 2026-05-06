@@ -14,7 +14,10 @@ body {
     --card: #111;
 
     font-family: 'Courier New', monospace;
-    background: var(--bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #fff;
     min-height: 100vh;
     display: flex;
@@ -23,15 +26,25 @@ body {
     gap: 30px;
 }
 
+body.cyan {
+    --main: #0ff;
+    --second: #f0f;
+    --accent: #ff0;
+    background-image: url('bg.jpg');
+}
+
 body.green {
     --main: #0f0;
     --second: #ff0;
     --accent: #0ff;
+    background-image: url('bg2.jpg');
 }
 
 body.red {
     --main: #f30;
     --second: #f60;
+    --accent: #ff0;
+    background-image: url('bg3.jpg');
 }
 
 /* ========== ОКНО ВХОДА ========== */
